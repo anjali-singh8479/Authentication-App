@@ -28,8 +28,9 @@ const Login = () => {
 }
   return (
     <>
-   
-    <div className='input-wrapper'>
+    <div className='form-wrapper'>
+      <form>
+      <div className='input-wrapper'>
         <label>Email</label>
         <input placeholder='Enter the email' onChange={handlechange} name="email"></input>
     </div>
@@ -37,9 +38,10 @@ const Login = () => {
         <label>Password</label>
         <input placeholder='Enter the password' onChange={handlechange} name="password"></input>
     </div>
-    <button className="button-click" id="login-button" onClick={handlelogin}>login</button>
-    <button className="button-click" id='register-button'><Link>Create Account</Link></button>
-   
+    <button className="button-click" id="login-button" onClick={handlelogin}>Sign In</button>
+    <button className="button-click" id='register-button'><Link to="/register" className='links'>Sign Up</Link></button>
+      </form>
+    </div>
     </>
   )
 }

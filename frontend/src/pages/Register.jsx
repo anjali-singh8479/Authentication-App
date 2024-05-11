@@ -24,6 +24,8 @@ const Register = () => {
     }
   return (
     <>
+    <div className='form-wrapper'>
+    <form>
     <div className='input-wrapper'>
         <label>Name</label>
         <input type='text' placeholder='enter the name' name='name' onChange={handlechange}></input>
@@ -37,7 +39,9 @@ const Register = () => {
         <input placeholder='Enter the password' onChange={handlechange} name="password"></input>
     </div>
     <button className="button-click" id="register-button" onClick={register}>Submit</button>
-    <button className='button-click' id='login-button'><Link to="/login">Login</Link></button>
+    <button className='button-click' id='login-button'><Link to="/login" className='links'>SIgn In</Link></button>
+    </form>
+    </div>
     </>
   )
 }
