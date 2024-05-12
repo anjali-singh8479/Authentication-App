@@ -3,6 +3,7 @@ import axios from 'axios';
 import {Link, useNavigate} from "react-router-dom"
 const Login = () => {
   const navigate=useNavigate()
+  axios.defaults.withCredentials=true
   const[details,setdetails]=useState({
     email:"",
     password:""
@@ -11,12 +12,14 @@ const Login = () => {
    setdetails((prev)=>({...prev,[e.target.name]:e.target.value}))
    console.log(details)
   }
-  const handlelogin=async()=>{
+  const handlelogin=async(e)=>{
+    e.preventDefault()
    try{  
     console.log("inside login") 
     const res=await axios.post("http://localhost:8800/login",details)
    if(res.data.status==="success"){
     navigate("/");
+    console.log("logged in ")
    }
    else{
     alert(res.data)
